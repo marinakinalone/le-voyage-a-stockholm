@@ -3,7 +3,7 @@ import { markerIcon } from './helpers';
 
 
 
-const Markers = ({ locations, types }) => {
+const Markers = ({ locations }) => {
     return (
         <>
         {locations.map(location => {
