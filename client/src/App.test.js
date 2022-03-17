@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+// import App from './App';
+import { Header, Map, Markers } from './components';
+// import renderer from 'react-test-renderer';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+test('Exports components', () => {
+  expect(typeof Header).toBe('function');
+  expect(typeof Map).toBe('function');
+  expect(typeof Markers).toBe('function');
+})
