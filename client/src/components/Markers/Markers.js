@@ -1,15 +1,17 @@
 import { Marker} from '@react-google-maps/api';
 import { markerIcon } from './helpers';
 
-const Markers = () => {
+const Markers = ({ locations, types }) => {
     return (
-         <Marker
-            position={{
-                lat: 59.29212410918028,
-                lng: 18.081913891108552
-            }}
+        <>
+        {locations.map(location => {
+            return <Marker
+            position={location.position}
             icon={markerIcon("blue")} 
         />
+        })}
+        </>
+
     )
 }
 

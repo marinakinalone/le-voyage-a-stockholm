@@ -1,14 +1,16 @@
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { apiKey, containerStyle, center } from './helpers';
 import { Markers } from '../index';
+import { useState } from 'react';
 
-const Map = () => {
-
+const Map = ({ locations, types }) => {
+   // const [locationData, setLocationData] = useState([...locations]);
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: `${apiKey}`
       })
 
+ 
     // const [map, setMap] = React.useState(null)
   
     // const onLoad = React.useCallback(function callback(map) {
@@ -30,7 +32,7 @@ const Map = () => {
         // onUnmount={onUnmount}
       >
         <>
-        <Markers />
+          <Markers locations={locations} types={types} />
         </> 
       </GoogleMap>
       </section>

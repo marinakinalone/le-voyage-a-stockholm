@@ -8,28 +8,20 @@ const App = () => {
   const [locationTypes, setLocationTypes] = useState([]);
   const [locationData, setLocationData] = useState([]);
 
-
-  const fetchLocationData = async () => {
-    const locationInfoData = await fetch("/locations")
-    const locations = await locationInfoData.json();
-    setLocationData([...locations.locations])
-    const typesData = await fetch("/types")
-    const types = await typesData.json();
-    setLocationTypes([...types.types])
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }
-
   useEffect(() => {
-    // fetch("/types")
-    //   .then(res => res.json())
-    //   .then(data => setLocationTypes([...data.types]))
-     
-  
-     fetchLocationData("/locations");
-  }, [])
-
+    const fetchLocationData = async () => {
+      const fetchedLocations = await fetch("/locations")
+      const locationsResult = await fetchedLocations.json();
+      setLocationData([...locationsResult.locations])
+      const fetchedTypes = await fetch("/types")
+      const typesResult = await fetchedTypes.json();
+      setLocationTypes([...typesResult.types])
+      setTimeout(() => {
+        setLoading(false)
+      }, 1000)
+     }
+     fetchLocationData();
+  }, [loading])
   return (
     <div className="page">
       {loading ? (
@@ -37,7 +29,7 @@ const App = () => {
       ) : (
         <>
         <Header />
-        <Map />
+        <Map locations={locationData} types={locationTypes} />
         <section className="info-buttons">
           <Details />
           <ButtonSet />
