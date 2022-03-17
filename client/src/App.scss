@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
 
+@mixin tablet_min_width {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+}
+
+@mixin desktop_min_width {
+    @media screen and (min-width: 900px) {
+      @content;
+    }
+}
+
 $annie: 'Annie Use Your Telescope', cursive;
+$shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04),
+2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06),
+5px 5px 10px rgba(0, 0, 0, 0.1);
 
 body {
     background-color: #EAEAEA;
@@ -16,10 +31,12 @@ body {
 
 .map {
     height: 50vh;
-    box-shadow:
-    0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04),
-    2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06),
-    5px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: $shadow;
+    @include tablet_min_width() {
+        height: 55vh;
+    }
+    
+
 }
   
 .header__title {
@@ -35,6 +52,10 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    @include tablet_min_width() {
+        height: 35vh;
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -46,31 +67,32 @@ body {
 
 .buttons__btn {
     margin: 0.5rem -0.2rem 0.3rem 0.5rem;
-    padding: 0;
+
     font-family: $annie;
     font-size: 1.5rem;
     border: 1px solid black;
     cursor: pointer;
-    box-shadow:
-        0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04),
-        2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06),
-        5px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: $shadow;
     transition: transform 0.3s, box-shadow 0.4s;
     &:hover {
         box-shadow: -3px -3px 0px 0px black;
         transform: translate(2px, 2px);
   }
+  @include tablet_min_width() {
+    height: 100%;
+    font-size: 1.75rem;
+   }
 }
 
 .details {
     background-color: #EAD5D5;
     margin: 1rem 0.3rem 0.3rem 0;
     border: 1px solid black;
-    box-shadow:
-    0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04),
-    2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06),
-    5px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: $shadow;
     position: relative;
+    @include tablet_min_width() {
+        min-height: 35vh;
+    }
 }
 
 .details__links {
@@ -82,4 +104,7 @@ body {
 
 .details_description {
     padding: 0rem 1rem;
+    @include tablet_min_width() {
+        font-size: 1.6rem;
+    }
 }

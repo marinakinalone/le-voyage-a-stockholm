@@ -43,6 +43,11 @@ const getDescriptionByType = selectedType => {
   setDisplayType([...updatedDescription]);
 }
 
+const getDescriptionByMarker = selectedMarkerKey => {
+  const updatedDescription = displayLocation.filter(location => location.place_id === selectedMarkerKey)
+  setDisplayType([...updatedDescription]);
+}
+
   return (
     <div className="page">
       {loading ? (
@@ -50,7 +55,7 @@ const getDescriptionByType = selectedType => {
       ) : (
         <>
         <Header />
-        <Map locations={displayLocation} />
+        <Map locations={displayLocation} getDescriptionByMarker={getDescriptionByMarker} />
         <section className="info-buttons">
           <Details typesInfo={displayType} />
           <ButtonSet typesInfo={locationTypes} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />

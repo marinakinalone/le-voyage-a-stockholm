@@ -18,6 +18,12 @@ body {
           box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (min-width: 768px) {
+  .map {
+    height: 55vh;
+  }
+}
+
 .header__title {
   margin: 0.5rem auto;
   font-weight: 400;
@@ -38,6 +44,13 @@ body {
   width: 50%;
 }
 
+@media screen and (min-width: 768px) {
+  .info-buttons {
+    height: 35vh;
+    font-size: 1.5rem;
+  }
+}
+
 .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,7 +64,6 @@ body {
 
 .buttons__btn {
   margin: 0.5rem -0.2rem 0.3rem 0.5rem;
-  padding: 0;
   font-family: "Annie Use Your Telescope", cursive;
   font-size: 1.5rem;
   border: 1px solid black;
@@ -71,6 +83,13 @@ body {
           transform: translate(2px, 2px);
 }
 
+@media screen and (min-width: 768px) {
+  .buttons__btn {
+    height: 100%;
+    font-size: 1.75rem;
+  }
+}
+
 .details {
   background-color: #EAD5D5;
   margin: 1rem 0.3rem 0.3rem 0;
@@ -78,6 +97,12 @@ body {
   -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
   position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .details {
+    min-height: 35vh;
+  }
 }
 
 .details__links {
@@ -89,5 +114,11 @@ body {
 
 .details_description {
   padding: 0rem 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .details_description {
+    font-size: 1.6rem;
+  }
 }
 /*# sourceMappingURL=App.css.map */
