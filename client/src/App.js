@@ -22,12 +22,11 @@ const Header = () => {
 
 const Map = () => {
   const apiKey = process.env.REACT_APP_ACCESS_KEY
-
   const containerStyle = {
-  width: '100%',
-  height: '100%',
-  border: '1px solid black',
-  borderRadius: '3px'
+    width: '100%',
+    height: '100%',
+    border: '1px solid black',
+    borderRadius: '3px'
 };
 
   const center = {
@@ -67,7 +66,7 @@ const Map = () => {
     </section>
   ) :
   <>
-    <p>currently loading...or broken!</p>
+    <p>currently loading...or maybe broken!</p>
   </>
 }
 
