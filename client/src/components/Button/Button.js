@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Button = ({ title, color, getLocationsByType }) => {
+const Button = ({ title, color, getLocationsByType, getDescriptionByType }) => {
     const handleChangeDisplay = () => {
         getLocationsByType(title);
+        getDescriptionByType(title);
     }
      
   return (

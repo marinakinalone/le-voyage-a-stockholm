@@ -8,7 +8,11 @@ const App = () => {
   const [locationTypes, setLocationTypes] = useState([]);
   const [locationData, setLocationData] = useState([]);
   const [displayLocation, setDisplayLocation] = useState([])
-  const [displayType, setDisplayType] = useState([])
+  const [displayType, setDisplayType] = useState([
+    {
+      "description" : "Le Voyage à Stockholm est un petit guide de présentant mes endroits favoris. Et oui, le titre est un clin d'oeil au Voyage à Nantes :)",
+    }
+])
 
   useEffect(() => {
     const fetchLocationData = async () => {
@@ -19,7 +23,6 @@ const App = () => {
       const fetchedTypes = await fetch("/types")
       const typesResult = await fetchedTypes.json();
       setLocationTypes([...typesResult.types])
-      setDisplayType([...typesResult.types])
       setTimeout(() => {
         setLoading(false)
       }, 1000)
@@ -36,6 +39,11 @@ const App = () => {
     setDisplayLocation([...updatedLocations]);
 }
 
+const getDescriptionByType = selectedType => {
+  const updatedDescription = locationTypes.filter(description => description.type === selectedType);
+  setDisplayType([...updatedDescription]);
+}
+
   return (
     <div className="page">
       {loading ? (
@@ -46,7 +54,7 @@ const App = () => {
         <Map locations={displayLocation} />
         <section className="info-buttons">
           <Details typesInfo={displayType} />
-          <ButtonSet typesInfo={displayType} getLocationsByType={getLocationsByType} />
+          <ButtonSet typesInfo={locationTypes} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />
         </section>
         </>
       )}
