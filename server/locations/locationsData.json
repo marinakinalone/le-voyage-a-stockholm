@@ -1,0 +1,114 @@
+{
+    "locations": [
+      {
+        "place_id": 0,
+        "name": "Blue Light Yokohama",
+        "position": {"lat": 59.314522163494956, "lng": 18.08542479689673},
+        "placeInfo": {
+          "type": "restaurant",
+          "description": "Un 'vrai' restaurant japonais dans le style Izakaya, c'est-à-dire qu'on commande plein de petits plats à partager. Tout est joliment présentés et les saveurs sont incroyables",
+          "address": "Åsögatan 170, 116 32 Stockholm",
+          "directions": "https://goo.gl/maps/AVquQHtrbQxP74KZ6"
+        }
+      },
+          {
+        "place_id": 1,
+        "name": "Java Whiskers",
+        "position": {"lat": 59.344699025719166, "lng": , 18.05416996471773},
+        "placeInfo": {
+          "type": "bars & cafés",
+          "description": "Bar à chats à la décoration joliment rétro",
+          "address": "Surbrunnsgatan 48, 113 48 Stockholm",
+          "directions": "https://g.page/javawhiskers?share"
+        }
+      },
+          {
+        "place_id": 2,
+        "name": "Epic Studios",
+        "position": {"lat": 59.29212410918028, "lng": 18.081913891108552},
+        "placeInfo": {
+          "type": "danse",
+          "description": "Ma deuxième maison pour le West Coast Swing. La communauté est très accueillante et la piste de danse, vraiment belle et spacieuse.",
+          "address": "Rökerigatan 21, 121 62 Johanneshov",
+          "directions": "https://goo.gl/maps/7LacUi5LcRTTnLF8A"
+        }
+      },
+          {
+        "place_id": 3,
+        "name": "Swedish Swing Society",
+        "position": {"lat": 59.34173035630998, "lng": 18.047058782531035},
+        "placeInfo": {
+          "type": "danse sociale",
+          "description": "Le meilleur endroit pour danser la fusion. Ambiance super sympathique, inclusive et musique variée pour travailler sa créativité.",
+          "address": "Odengatan 89, 113 22 Stockholm",
+          "directions": "https://goo.gl/maps/4Q8Ysi5cJm5FUx5KA"
+        }
+      },
+          {
+        "place_id": 4,
+        "name": "VÅR Pizza",
+        "position": {"lat": 59.30597585361412, "lng": 18.00122141378393},
+        "placeInfo": {
+          "type": "restaurant",
+          "description": "A deux pas de chez nous, c'est la pizzeria dans laquelle Ryan et moi aimons nou retrouver après une journée de travail un peu stressante. Ambiance feutrée, pizza délicieuses et abordables.",
+          "address": "Erik Segersälls Väg 1, 126 50 Hägersten",
+          "directions": "https://goo.gl/maps/EZDSqfBrLnPgCRCt5"
+        }
+      },
+          {
+        "place_id": 5,
+        "name": "Pharmarium",
+        "position": {"lat": 59.324975984306846, "lng": 18.07107455611421},
+        "placeInfo": {
+          "type": "bars & cafés",
+          "description": "Atmosphère un peu steampunk sur fond de jazz et cocktails sophistiqués. Me rappelle les soirées aux Bootlegger à Nantes avec ma meilleure amie",
+          "address": "Stortorget 7, 111 29 Stockholm",
+          "directions": "https://g.page/Pharmarium?share"
+        }
+      },
+          {
+        "place_id": 6,
+        "name": "Nomad",
+        "position": {"lat": 59.33620000062559, "lng": 18.055130765917312},
+        "placeInfo": {
+          "type": "restaurant",
+          "description": "Tout petit bar-restaurant à faire lorsqu'il y a un concert de jazz. Joliment bruyant, c'est de cette manière que j'aimerais passer mes soirées en semaine avec les copains ! La carte est simple avec des ingrédients locaux.",
+          "address": "Upplandsgatan 2, 111 23 Stockholm",
+          "directions": "https://goo.gl/maps/3b8abcJRpiPrgH61A"
+        }
+      },
+          {
+        "place_id": 7,
+        "name": "Musée Vasa",
+        "position": {"lat": 59.32814091808697, "lng": 18.091412500987666},
+        "placeInfo": {
+          "type": "culture",
+          "description": "S'il n'y avait qu'un seul musée à visiter à Stockholm, ce serait celui-ci... L'expérience est impressionnante et ludique, et les informations sont organisées de telle sorte à ce qu'il y en ait pour tous les goûts",
+          "address": "Galärvarvsvägen 14, 115 21 Stockholm",
+          "directions": "https://goo.gl/maps/XyMJj5ipc6C8pH9N9"
+        }
+      },
+          {
+        "place_id": 8,
+        "name": "Skansen",
+        "position": {"lat": 59.32716116212566, "lng": 18.103717724287293},
+        "placeInfo": {
+          "type": "culture",
+          "description": "Grand musée en plein-air que j'apprécie comme un voyage : dans le temps, dans les régions. A découvrir pendant la période de Noël pour vivre tous les clichés du marché de Noël et s'ennivrer des odeurs de safran",
+          "address": "Djurgårdsslätten 49-51, 115 21 Stockholm",
+          "directions": "https://goo.gl/maps/FBrQ8kccXgdN8Y3C6"
+        }
+      },
+          {
+        "place_id": 9,
+        "name": "Capitol",
+        "position": {"lat": 59.34044244418684, "lng": 18.037428910093144},
+        "placeInfo": {
+          "type": "culture",
+          "description": "Cinéma Art Déco dans lequel on peut aussi dîner. Parfait pour une soirée en amoureux un peu originale.",
+          "address": "Sankt Eriksgatan 82, 113 62 Stockholm",
+          "directions": "https://goo.gl/maps/ZWHwAsqYPgF8nHEA8"
+        }
+      }
+    ]
+  }
