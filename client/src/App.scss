@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
+$annie: 'Annie Use Your Telescope', cursive;
+
+.page {
+    box-sizing: border-box;
+    margin: 0 0.5rem;
+    height: 100vh;
+    font-family: $annie;
+}
+
+.map {
+    height: 50vh;
+}
+  
+.header__title {
+    margin: 0.5rem auto;
+    font-weight: 400;
+    // border: 1px solid red;
+}

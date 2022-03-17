@@ -1,6 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
 .page {
-  position: sticky;
-  top: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 0.5rem;
   height: 100vh;
+  font-family: "Annie Use Your Telescope", cursive;
 }
 
+.map {
+  height: 50vh;
+}
+
+.header__title {
+  margin: 0.5rem auto;
+  font-weight: 400;
+}
+/*# sourceMappingURL=App.css.map */
