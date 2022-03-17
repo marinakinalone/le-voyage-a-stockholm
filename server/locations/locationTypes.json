@@ -1,9 +1,35 @@
 {
     "types": [
-        { "SHOW ALL" : "Le Voyage à Stockholm est un petit guide de présentant mes endroits favoris, découverts depuis que j'ai emménagé dans la ville en Septembre 2021. Et oui, le titre est tendrement inspiré du Voyage à Nantes :)", "color": "#"},
-        {"restaurants" : "", "color": "#"},
-        {"bars & cafés" : "Cafés mignons pour travailler, lire ou passer un après-midi au chaud. Pour les bars, je recherche toujours les cocktails un peu sophistiqués ou des ambiances très cosy.", "color": "#"},
-        {"culture" : "Un pot-pourri de toutes les expériences culturelles qui font d'après moi le charme de Stockholm et qui parfois, n'existent vraiment que dans cette ville !", "color": "#"},
-        {"danse sociale" : "Le meilleur moyen de rencontrer des gens. Stockholm est la capitale du Lindy Hop (que je n'ai pas encore essayé !) mais on trouve de la danse pour tous les goûts !", "color": "#"}
+        {
+            "SHOW ALL" : "Le Voyage à Stockholm est un petit guide de présentant mes endroits favoris, découverts depuis que j'ai emménagé dans la ville en Septembre 2021. Et oui, le titre est tendrement inspiré du Voyage à Nantes :)",
+            "colors": {
+                "default": "#E3BFCE",
+                "selected": "#C48FA5"
+            }
+        }, {
+            "restaurants" : "Restaurants sans chichis pour se poser en amoureux ou avec une bande de copains.",
+            "colors": {
+                "default": "#B7B4FF",
+                "selected": "#AE96FF"
+            }
+        }, {
+            "bars & cafés" : "Cafés mignons pour travailler, lire ou passer un après-midi au chaud. Pour les bars, je recherche toujours les cocktails un peu sophistiqués ou des ambiances très cosy.",
+            "colors": {
+                "default": "#ACCBBE",
+                "selected": "#74C3A3"
+            }
+        }, {
+            "culture" : "Un pot-pourri de toutes les expériences culturelles qui font d'après moi le charme de Stockholm et qui parfois, n'existent vraiment que dans cette ville !",
+            "colors": {
+                "default": "#FFEFC1",
+                "selected": "#FFDD7B"
+            }
+        }, {
+            "danse sociale" : "Le meilleur moyen de rencontrer des gens. Stockholm est la capitale du Lindy Hop (que je n'ai pas encore essayé !) mais on trouve de la danse pour tous les goûts !",
+            "colors": {
+                "default": "#FFC9BA",
+                "selected": "#FFA389"
+            }
+        }
       ]
   }
