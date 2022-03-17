@@ -1,8 +1,13 @@
 import React from 'react'
+import { Button } from '../index';
 
-const ButtonSet = () => {
+const ButtonSet = ({ typesInfo }) => {
   return (
-    <div>ButtonSet</div>
+      <section className="buttons">
+          {typesInfo.map(type => {
+            return(<Button key={type.type } title={type.type} color={type.colors.default} />)
+          })}
+      </section>
   )
 }
 

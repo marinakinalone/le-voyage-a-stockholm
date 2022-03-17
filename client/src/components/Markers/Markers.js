@@ -10,7 +10,7 @@ const Markers = ({ locations, types }) => {
             return <Marker
             key={location.place_id}
             position={location.position}
-            icon={markerIcon('#B7B4FF')} 
+            icon={markerIcon(location.colors.default)} 
         />
         })}
         </>

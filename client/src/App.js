@@ -31,11 +31,9 @@ const App = () => {
         <Header />
         <Map locations={locationData} types={locationTypes} />
         <section className="info-buttons">
-          <Details />
-          <ButtonSet />
+          <Details typesInfo={locationTypes} />
+          <ButtonSet typesInfo={locationTypes} />
         </section>
-        <p>{locationData[0].name}</p>
-        <p>{locationTypes[0].type}</p>
         </>
       )}
     </div>
