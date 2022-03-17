@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div className="page">
       {loading ? (
-        <p>loading...</p>
+        <p>chargement...</p>
       ) : (
         <>
         <Header />

@@ -28,6 +28,9 @@ const Map = ({ locations, types }) => {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={11} 
+        options={{
+          disableDefaultUI: true
+        }}
         // onLoad={onLoad}
         // onUnmount={onUnmount}
       >
