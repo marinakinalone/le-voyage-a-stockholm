@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
+body {
+  background-color: #EAEAEA;
+}
+
 .page {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -6,11 +10,12 @@
   padding: 0 0.5rem;
   height: 100vh;
   font-family: "Annie Use Your Telescope", cursive;
-  background-color: #EAEAEA;
 }
 
 .map {
   height: 50vh;
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header__title {
@@ -31,7 +36,6 @@
 
 .info-buttons > * {
   width: 50%;
-  border: 1px solid red;
 }
 
 .buttons {
@@ -42,6 +46,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 0.5rem;
 }
 
 .buttons__btn {
@@ -51,8 +56,8 @@
   font-size: 1.5rem;
   border: 1px solid black;
   cursor: pointer;
-  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 10px 10px 16px rgba(0, 0, 0, 0.1);
-          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 10px 10px 16px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
   -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.4s;
   transition: -webkit-transform 0.3s, -webkit-box-shadow 0.4s;
   transition: transform 0.3s, box-shadow 0.4s;
@@ -64,5 +69,25 @@
           box-shadow: -3px -3px 0px 0px black;
   -webkit-transform: translate(2px, 2px);
           transform: translate(2px, 2px);
+}
+
+.details {
+  background-color: #EAD5D5;
+  margin: 1rem 0.3rem 0.3rem 0;
+  border: 1px solid black;
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.details__links {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding-left: 1rem;
+}
+
+.details_description {
+  padding: 0rem 1rem;
 }
 /*# sourceMappingURL=App.css.map */
