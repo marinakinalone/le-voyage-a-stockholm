@@ -4,11 +4,16 @@ const fs = require('fs');
 const app = express();
 const port = 3001;
 
+const readDataFromFile = path => {
+  const data = fs.readFileSync(path);
+  const parsedData = JSON.parse(data);
+  return parsedData;
+};
+
 app.get('/types', async (req, res) => {
   try {
-    const types = fs.readFileSync('./locations/locationTypes.json');
-    const parsedTypes = await JSON.parse(types);
-    res.status(200).json(parsedTypes);
+    const data = readDataFromFile('./locations/locationTypes.json');
+    res.status(200).send(data).end();
   } catch (err) {
     res.status(404).send('not found');
   }
