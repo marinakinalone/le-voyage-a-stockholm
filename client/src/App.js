@@ -1,6 +1,5 @@
 import './App.css';
 import { Header, Map, Details, ButtonSet } from './components/index';
-// import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { useEffect, useState } from 'react';
 
 const App = () => {
