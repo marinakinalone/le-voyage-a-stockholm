@@ -9,7 +9,7 @@ const App = () => {
   const [displayLocation, setDisplayLocation] = useState([])
   const [displayType, setDisplayType] = useState([
     {
-      "description" : "Le Voyage à Stockholm est un petit guide de présentant mes endroits favoris. Et oui, le titre est un clin d'oeil au Voyage à Nantes :)",
+      "description" : "Le Voyage à Stockholm est un petit guide présentant mes endroits favoris. Et oui, le titre est un clin d'oeil au Voyage à Nantes :)",
     }
 ])
 
@@ -29,13 +29,13 @@ const App = () => {
      fetchLocationData();
   }, [loading])
 
-  const getLocationsByType = selectedType => {
-    if (selectedType === "SHOW ALL") {
-      setDisplayLocation([...locationData])
-      return;
-    }
-    const updatedLocations = locationData.filter(location => location.type === selectedType);
-    setDisplayLocation([...updatedLocations]);
+const getLocationsByType = selectedType => {
+   if (selectedType === "SHOW ALL") {
+    setDisplayLocation([...locationData])
+    return;
+   }
+  const updatedLocations = locationData.filter(location => location.type === selectedType);
+   setDisplayLocation([...updatedLocations]);
 }
 
 const getDescriptionByType = selectedType => {
