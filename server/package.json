@@ -1,0 +1,31 @@
+{
+  "name": "le-voyage-a-stockholm",
+  "version": "1.0.0",
+  "description": "A small app to present my favorite places in Stockholm on a map",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jest",
+    "lint": "eslint '**/*.js'",
+    "pretest": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marinakinalone/le-voyage-a-stockholm.git"
+  },
+  "author": "mks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marinakinalone/le-voyage-a-stockholm/issues"
+  },
+  "homepage": "https://github.com/marinakinalone/le-voyage-a-stockholm#readme",
+  "devDependencies": {
+    "eslint-config-salt": "^1.2.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "supertest": "^6.2.2"
+  }
+}
