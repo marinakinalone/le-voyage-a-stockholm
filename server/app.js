@@ -10,12 +10,27 @@ const readDataFromFile = path => {
   return parsedData;
 };
 
-app.get('/types', async (req, res) => {
+app.get('/types', (req, res) => {
   try {
     const data = readDataFromFile('./locations/locationTypes.json');
-    res.status(200).send(data).end();
+    res
+      .status(200)
+      .send(data)
+      .end();
   } catch (err) {
-    res.status(404).send('not found');
+    res.status(404).send('types not found');
+  }
+});
+
+app.get('/locations', (req, res) => {
+  try {
+    const data = readDataFromFile('./locations/locationsData.json');
+    res
+      .status(200)
+      .send(data)
+      .end();
+  } catch (err) {
+    res.status(404).send('locations not found');
   }
 });
 
