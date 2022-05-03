@@ -1,8 +1,9 @@
 const express = require('express');
 const fs = require('fs');
+require('dotenv').config();
 
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT || 3001;
 
 const readDataFromFile = path => {
   const data = fs.readFileSync(path);
@@ -34,8 +35,9 @@ app.get('/locations', (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log(`Listening at http://localhost:${PORT}`);
 });
 
 module.exports.app = app;
