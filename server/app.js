@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
@@ -10,6 +11,12 @@ const readDataFromFile = path => {
   const parsedData = JSON.parse(data);
   return parsedData;
 };
+
+const options = {
+  origin: ['http://localhost:3000', 'https://le-voyage-a-stockholm.herokuapp.com/'],
+};
+
+app.use(cors(options));
 
 app.get('/types', (req, res) => {
   try {
