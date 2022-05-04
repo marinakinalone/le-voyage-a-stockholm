@@ -15,11 +15,12 @@ const App = () => {
 
   useEffect(() => {
     const fetchLocationData = async () => {
-      const fetchedLocations = await fetch("/locations")
+      console.log("waiting...")
+      const fetchedLocations = await fetch("https://le-vas-server.herokuapp.com/locations")
       const locationsResult = await fetchedLocations.json();
       setLocationData([...locationsResult.locations])
       setDisplayLocation([...locationsResult.locations])
-      const fetchedTypes = await fetch("/types")
+      const fetchedTypes = await fetch("https://le-vas-server.herokuapp.com/types")
       const typesResult = await fetchedTypes.json();
       setLocationTypes([...typesResult.types])
       setTimeout(() => {
