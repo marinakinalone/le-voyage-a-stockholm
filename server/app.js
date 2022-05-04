@@ -12,11 +12,7 @@ const readDataFromFile = path => {
   return parsedData;
 };
 
-const options = {
-  origin: ['http://localhost:3000', 'https://le-voyage-a-stockholm.herokuapp.com/'],
-};
-
-app.use(cors(options));
+app.use(cors());
 
 app.get('/types', (req, res) => {
   try {
