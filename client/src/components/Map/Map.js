@@ -2,7 +2,7 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { apiKey, containerStyle, center } from './helpers';
 import { Markers } from '../index';
 
-const Map = ({ locations, getDescriptionByMarker }) => {
+const Map = ({ locations, categories, getDescriptionByMarker }) => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: `${apiKey}`
@@ -19,7 +19,7 @@ const Map = ({ locations, getDescriptionByMarker }) => {
         }}
       >
         <>
-          <Markers locations={locations} getDescriptionByMarker={getDescriptionByMarker} />
+          <Markers locations={locations} categories={categories} getDescriptionByMarker={getDescriptionByMarker} />
         </> 
       </GoogleMap>
       </section>

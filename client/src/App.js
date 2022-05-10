@@ -57,7 +57,7 @@ const getDescriptionByMarker = selectedMarkerKey => {
       ) : (
         <>
         <Header />
-        <Map locations={displayLocation} getDescriptionByMarker={getDescriptionByMarker} />
+        <Map locations={displayLocation} categories={categories} getDescriptionByMarker={getDescriptionByMarker} />
         <section className="info-buttons">
           <Details content={displayCategory} />
           <ButtonSet categories={categories} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />
