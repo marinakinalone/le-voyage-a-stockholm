@@ -1,9 +1,8 @@
 import { Marker} from '@react-google-maps/api';
 import { markerIcon } from './helpers';
 
-
-
 const Markers = ({ locations, getDescriptionByMarker }) => {
+    console.log(locations)
     const handleClick = (id) =>{
         getDescriptionByMarker(id)
     }
@@ -11,10 +10,10 @@ const Markers = ({ locations, getDescriptionByMarker }) => {
         <>
         {locations.map(location => {
             return <Marker
-            key={location.place_id}
+            key={location._id}
             position={location.position}
-            icon={markerIcon(location.colors.default)}
-            onClick={() => handleClick(location.place_id)}
+            icon={markerIcon("red")}
+            onClick={() => handleClick(location._id)}
         />
         })}
         </>

@@ -45,11 +45,10 @@ const getDescriptionByType = selectedType => {
 }
 
 const getDescriptionByMarker = selectedMarkerKey => {
-  const updatedDescription = displayLocation.filter(location => location.place_id === selectedMarkerKey)
+  const updatedDescription = displayLocation.filter(location => location._id === selectedMarkerKey)
   setDisplayCategory([...updatedDescription]);
 }
 
-// <Map locations={displayLocation} getDescriptionByMarker={getDescriptionByMarker} />
 
   return (
     <div className="page">
@@ -58,6 +57,7 @@ const getDescriptionByMarker = selectedMarkerKey => {
       ) : (
         <>
         <Header />
+        <Map locations={displayLocation} getDescriptionByMarker={getDescriptionByMarker} />
         <section className="info-buttons">
           <Details content={displayCategory} />
           <ButtonSet categories={categories} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />
