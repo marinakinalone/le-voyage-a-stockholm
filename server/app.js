@@ -1,42 +1,37 @@
 const express = require('express');
-const fs = require('fs');
 const cors = require('cors');
+const connectDb = require('./db/db');
+const Category = require('./models/Category');
 require('dotenv').config();
 
+connectDb();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const readDataFromFile = path => {
-  const data = fs.readFileSync(path);
-  const parsedData = JSON.parse(data);
-  return parsedData;
-};
-
 app.use(cors());
 
-app.get('/types', (req, res) => {
+app.get('/categories', async (req, res) => {
   try {
-    const data = readDataFromFile('./locations/locationTypes.json');
+    const data = await Category.find({});
     res
-      .status(200)
-      .send(data)
+      .json(data)
       .end();
   } catch (err) {
     res.status(404).send('types not found');
   }
 });
 
-app.get('/locations', (req, res) => {
-  try {
-    const data = readDataFromFile('./locations/locationsData.json');
-    res
-      .status(200)
-      .send(data)
-      .end();
-  } catch (err) {
-    res.status(404).send('locations not found');
-  }
-});
+// app.get('/locations', (req, res) => {
+//   try {
+//     const data = readDataFromFile('./locations/locationsData.json');
+//     res
+//       .status(200)
+//       .send(data)
+//       .end();
+//   } catch (err) {
+//     res.status(404).send('locations not found');
+//   }
+// });
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

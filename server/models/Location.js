@@ -10,6 +10,9 @@ const locationSchema = new Schema({
   description: String,
   address: String,
   directions: String,
+},
+{
+  collection: 'locations',
 });
 
 const Location = mongoose.model('Location', locationSchema);

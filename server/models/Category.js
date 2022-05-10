@@ -7,6 +7,9 @@ const categorySchema = new Schema({
   category: String,
   description: String,
   colors: Object,
+},
+{
+  collection: 'categories',
 });
 
 const Category = mongoose.model('Category', categorySchema);
