@@ -18,6 +18,7 @@ const Markers = ({ locations, categories, getDescriptionByMarker }) => {
             key={location._id}
             position={location.position}
             icon={markerIcon(getColor(categories, location.category))}
+            clickable={true}
             onClick={() => handleClick(location._id)}
         />
         })}
