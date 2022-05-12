@@ -1,41 +1,32 @@
 {
-    "types": [
+    "categories": [
      {
-            "type" : "restaurants",
+            "category" : "restaurants",
             "description" : "Restaurants sans chichis pour se poser en amoureux ou avec une bande de copains.",
             "colors": {
                 "default": "#B7B4FF",
                 "selected": "#AE96FF"
             }
         }, {
-            "type" : "bars & cafés",
+            "category" : "bars & cafés",
             "description": "Cafés mignons pour passer un après-midi au chaud et bars aux cocktails sophistiqués dans ambiance cosy.",
             "colors": {
                 "default": "#ACCBBE",
                 "selected": "#74C3A3"
             }
         }, {
-            "type" : "culture",
+            "category" : "culture",
             "description": "Un pot-pourri de toutes les expériences culturelles qui font le charme de Stockholm !",
             "colors": {
                 "default": "#FFEFC1",
                 "selected": "#FFDD7B"
             }
         }, {
-            "type" : "danse sociale",
+            "category" : "danse sociale",
             "description" : "Le meilleur moyen de rencontrer des gens. On trouve de la danse pour tous les goûts !",
             "colors": {
                 "default": "#FFC9BA",
                 "selected": "#FFA389"
             }
-        },
-        {
-            "type" : "SHOW ALL",
-            "description" : "Le Voyage à Stockholm est un petit guide présentant mes endroits favoris. Et oui, le titre est un clin d'oeil au Voyage à Nantes :)",
-            "colors": {
-                "default": "#E3BFCE",
-                "selected": "#C48FA5"
-            }
-        }
-      ]
+        }]
   }

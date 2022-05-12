@@ -4,50 +4,51 @@ import { useEffect, useState } from 'react';
 
 const App = () => {
   const [loading, setLoading] = useState(true)
-  const [locationTypes, setLocationTypes] = useState([]);
-  const [locationData, setLocationData] = useState([]);
+  const [locations, setLocations] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [displayLocation, setDisplayLocation] = useState([])
-  const [displayType, setDisplayType] = useState([
+  const [displayCategory, setDisplayCategory] = useState([
     {
       "description" : "Le Voyage à Stockholm est un petit guide présentant mes endroits favoris. Et oui, le titre est un clin d'oeil au Voyage à Nantes :)",
     }
 ])
 
   useEffect(() => {
-    const fetchLocationData = async () => {
+    const fetchLocationsAndCategories = async () => {
       console.log("waiting...")
-      const fetchedLocations = await fetch("https://le-vas-server.herokuapp.com/locations")
-      const locationsResult = await fetchedLocations.json();
-      setLocationData([...locationsResult.locations])
-      setDisplayLocation([...locationsResult.locations])
-      const fetchedTypes = await fetch("https://le-vas-server.herokuapp.com/types")
-      const typesResult = await fetchedTypes.json();
-      setLocationTypes([...typesResult.types])
+      const locationsData = await fetch("http://localhost:3001/locations")
+      const locationsResult = await locationsData.json();
+      setLocations([...locationsResult])
+      setDisplayLocation([...locations])
+      const categoriesData = await fetch("http://localhost:3001/categories")
+      const categoriesResult = await categoriesData.json();
+      setCategories([...categoriesResult])
       setTimeout(() => {
         setLoading(false)
       }, 1000)
      }
-     fetchLocationData();
+     fetchLocationsAndCategories();
   }, [loading])
 
 const getLocationsByType = selectedType => {
-   if (selectedType === "SHOW ALL") {
-    setDisplayLocation([...locationData])
+   if (selectedType === "TOUT VOIR") {
+    setDisplayLocation([...locations])
     return;
    }
-  const updatedLocations = locationData.filter(location => location.type === selectedType);
+  const updatedLocations = locations.filter(location => location.category === selectedType);
    setDisplayLocation([...updatedLocations]);
 }
 
 const getDescriptionByType = selectedType => {
-  const updatedDescription = locationTypes.filter(description => description.type === selectedType);
-  setDisplayType([...updatedDescription]);
+  const updatedDescription = categories.filter(description => description.category === selectedType);
+  setDisplayCategory([...updatedDescription]);
 }
 
 const getDescriptionByMarker = selectedMarkerKey => {
-  const updatedDescription = displayLocation.filter(location => location.place_id === selectedMarkerKey)
-  setDisplayType([...updatedDescription]);
+  const updatedDescription = displayLocation.filter(location => location._id === selectedMarkerKey)
+  setDisplayCategory([...updatedDescription]);
 }
+
 
   return (
     <div className="page">
@@ -56,10 +57,10 @@ const getDescriptionByMarker = selectedMarkerKey => {
       ) : (
         <>
         <Header />
-        <Map locations={displayLocation} getDescriptionByMarker={getDescriptionByMarker} />
+        <Map locations={displayLocation} categories={categories} getDescriptionByMarker={getDescriptionByMarker} />
         <section className="info-buttons">
-          <Details typesInfo={displayType} />
-          <ButtonSet typesInfo={locationTypes} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />
+          <Details content={displayCategory} />
+          <ButtonSet categories={categories} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />
         </section>
         </>
       )}
