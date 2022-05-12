@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 @mixin tablet_min_width {
     @media screen and (min-width: 768px) {
@@ -41,7 +42,7 @@ body {
     padding: 0 0.5rem;
     font-family: $annie;
     @include landscape_mode() {
-        margin: 0rem 10%;
+        margin: 0rem 10% 2rem 10%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 1rem;
@@ -55,6 +56,7 @@ body {
     grid-area: header;
     @include landscape_mode() {
         margin-top: 0.5rem;
+        margin-bottom: -1rem;
     }
 }
 
@@ -70,14 +72,13 @@ body {
     @include landscape_mode() {
         flex-direction: column;
         justify-content: flex-start !important;
-        * {
-            min-width: 100%;
-        }
         .details {
             margin-top: 0;
+            min-width: 100%;
         }
         .buttons {
             margin-left: -0.4rem;
+            min-width: 100%;
         }
     }
 }
@@ -104,7 +105,7 @@ body {
     width: 100%;
     justify-content: space-between;
     @include tablet_min_width() {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
 }
@@ -129,7 +130,7 @@ body {
   }
   @include tablet_min_width() {
     height: 100%;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
    }
 }
 
@@ -139,6 +140,8 @@ body {
     border: 1px solid black;
     box-shadow: $shadow;
     position: relative;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 200;
     @include tablet_min_width() {
         min-height: 35vh;
     }
@@ -148,16 +151,32 @@ body {
     text-align: center;
     position: absolute;
     bottom: 0;
-    padding-left: 1rem;
+    padding-left: 0.5rem;    
+    font-size: 0.7rem;
+    word-spacing: -2px;
+    letter-spacing: -0.6px;
+    @include tablet_min_width() {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+    }
 }
 
 .details_description {
-    padding: 0rem 1rem;
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
     @include tablet_min_width() {
-        font-size: 1.6rem;
+        font-size: 1rem;
+        padding: 0rem 1rem;
     }
 }
 
 .details__title {
-    margin: 0.5rem 0 -1rem 1rem;
+    margin: 0.5rem 0 -0.7rem 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    @include tablet_min_width() {
+        font-size: 1.2rem;
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+    }
 }
