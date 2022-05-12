@@ -5,7 +5,7 @@ const markerIcon = (color) => {
     fillColor: `${color}`,
     strokeColor: 'black',
     strokeOpacity: 1,
-    strokeWeight: 0.5,
+    strokeWeight: 0.6,
     fillOpacity: 1,
     scale: 1.5,
     rotation: 0,

@@ -31,7 +31,7 @@ const App = () => {
   }, [loading])
 
 const getLocationsByType = selectedType => {
-   if (selectedType === "SHOW ALL") {
+   if (selectedType === "TOUT VOIR") {
     setDisplayLocation([...locations])
     return;
    }
