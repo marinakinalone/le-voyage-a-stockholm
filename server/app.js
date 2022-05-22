@@ -1,37 +1,28 @@
 const express = require('express');
-const fs = require('fs');
 const cors = require('cors');
+const connectDb = require('./db/db');
+const Category = require('./models/Category');
+const Location = require('./models/Location');
 require('dotenv').config();
 
+connectDb();
 const app = express();
-
-const readDataFromFile = path => {
-  const data = fs.readFileSync(path);
-  const parsedData = JSON.parse(data);
-  return parsedData;
-};
 
 app.use(cors());
 
-app.get('/types', (req, res) => {
+app.get('/categories', async (req, res) => {
   try {
-    const data = readDataFromFile('./locations/locationTypes.json');
-    res
-      .status(200)
-      .send(data)
-      .end();
+    const data = await Category.find({});
+    res.json(data);
   } catch (err) {
-    res.status(404).send('types not found');
+    res.status(404).send('categories not found');
   }
 });
 
-app.get('/locations', (req, res) => {
+app.get('/locations', async (req, res) => {
   try {
-    const data = readDataFromFile('./locations/locationsData.json');
-    res
-      .status(200)
-      .send(data)
-      .end();
+    const data = await Location.find({});
+    res.json(data);
   } catch (err) {
     res.status(404).send('locations not found');
   }

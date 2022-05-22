@@ -10,9 +10,10 @@ A small app to present my favorite places in Stockholm on a map
 ### - server-side -
 - Node.js
 - Express
-
+- MongoDB & Mongoose
+## What I have learned from this project
+to-do
 ## What's next to do?
-
 to-do
 
 ## Team

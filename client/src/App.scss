@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 @mixin tablet_min_width {
     @media screen and (min-width: 768px) {
       @content;
     }
 }
+
+@mixin tablet_max_width {
+    @media screen and (max-width: 900px) and (orientation: portrait) {
+      @content;
+    }
+}
+
+@mixin landscape_mode {
+    @media screen and (min-width: 768px) and (orientation: landscape) {
+      @content;
+    }
+}
+
 
 @mixin desktop_min_width {
     @media screen and (min-width: 900px) {
@@ -14,33 +28,71 @@
 
 $annie: 'Annie Use Your Telescope', cursive;
 $shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04),
-2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06),
-5px 5px 10px rgba(0, 0, 0, 0.1);
+2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06),
+5px 5px 5px rgba(0, 0, 0, 0.1);
 
 body {
-    background-color: #EAEAEA;
+    background-color: #f1f1f1;
+    
 }
 
 .page {
     box-sizing: border-box;
     margin: 0;
     padding: 0 0.5rem;
-    height: 100vh;
     font-family: $annie;
+    @include landscape_mode() {
+        margin: 0rem 10% 2rem 10%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        grid-template-areas:
+            "header header"
+            "info map"
+    }
+}
+
+.header {
+    grid-area: header;
+    @include landscape_mode() {
+        margin-top: 0.5rem;
+        margin-bottom: -1rem;
+    }
 }
 
 .map {
-    height: 50vh;
-    box-shadow: $shadow;
-    @include tablet_min_width() {
-        height: 55vh;
+    grid-area: map;
+    @include landscape_mode() {
+        margin-top: 0rem;
     }
-    
+}
 
+.info-buttons {
+    grid-area: info;
+    @include landscape_mode() {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        .details {
+            margin-top: 0;
+            min-width: 100%;
+        }
+        .buttons {
+            margin-left: -0.4rem;
+            min-width: 100%;
+        }
+    }
+}
+
+// END OF GRID EXPERIMENT 
+.map {
+    box-shadow: $shadow;
+    @include tablet_max_width() {
+        height: 50vh;
+    }
 }
   
 .header__title {
-    margin: 0.5rem auto;
+    margin: 0.3rem auto;
     font-weight: 400;
     font-size: 2.3rem;
 }
@@ -53,8 +105,7 @@ body {
     width: 100%;
     justify-content: space-between;
     @include tablet_min_width() {
-        height: 35vh;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
 }
@@ -66,10 +117,9 @@ body {
 }
 
 .buttons__btn {
-    margin: 0.5rem -0.2rem 0.3rem 0.5rem;
-
+    margin: 0.3rem -0.2rem 0.3rem 0.5rem;
     font-family: $annie;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border: 1px solid black;
     cursor: pointer;
     box-shadow: $shadow;
@@ -80,16 +130,18 @@ body {
   }
   @include tablet_min_width() {
     height: 100%;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
    }
 }
 
 .details {
-    background-color: #EAD5D5;
-    margin: 1rem 0.3rem 0.3rem 0;
+    background-color: #F0E0E0;
+    margin: 0.8rem 0.3rem 0.3rem 0;
     border: 1px solid black;
     box-shadow: $shadow;
     position: relative;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 200;
     @include tablet_min_width() {
         min-height: 35vh;
     }
@@ -99,16 +151,32 @@ body {
     text-align: center;
     position: absolute;
     bottom: 0;
-    padding-left: 1rem;
+    padding-left: 0.5rem;    
+    font-size: 0.7rem;
+    word-spacing: -2px;
+    letter-spacing: -0.6px;
+    @include tablet_min_width() {
+        font-size: 0.9rem;
+        padding-left: 1rem;
+    }
 }
 
 .details_description {
-    padding: 0rem 1rem;
+    padding: 0rem 0.5rem;
+    font-size: 0.8rem;
     @include tablet_min_width() {
-        font-size: 1.6rem;
+        font-size: 1rem;
+        padding: 0rem 1rem;
     }
 }
 
 .details__title {
-    margin: 0.5rem 0 -1rem 1rem;
+    margin: 0.5rem 0 -0.7rem 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    @include tablet_min_width() {
+        font-size: 1.2rem;
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+    }
 }

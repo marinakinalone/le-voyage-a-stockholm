@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 body {
-  background-color: #EAEAEA;
+  background-color: #f1f1f1;
 }
 
 .page {
@@ -8,24 +9,79 @@ body {
           box-sizing: border-box;
   margin: 0;
   padding: 0 0.5rem;
-  height: 100vh;
   font-family: "Annie Use Your Telescope", cursive;
 }
 
-.map {
-  height: 50vh;
-  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .page {
+    margin: 0rem 10% 2rem 10%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+        grid-template-areas: "header header" "info map";
+  }
 }
 
-@media screen and (min-width: 768px) {
+.header {
+  grid-area: header;
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .header {
+    margin-top: 0.5rem;
+    margin-bottom: -1rem;
+  }
+}
+
+.map {
+  grid-area: map;
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
   .map {
-    height: 55vh;
+    margin-top: 0rem;
+  }
+}
+
+.info-buttons {
+  grid-area: info;
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .info-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+  }
+  .info-buttons .details {
+    margin-top: 0;
+    min-width: 100%;
+  }
+  .info-buttons .buttons {
+    margin-left: -0.4rem;
+    min-width: 100%;
+  }
+}
+
+.map {
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  .map {
+    height: 50vh;
   }
 }
 
 .header__title {
-  margin: 0.5rem auto;
+  margin: 0.3rem auto;
   font-weight: 400;
   font-size: 2.3rem;
 }
@@ -46,8 +102,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .info-buttons {
-    height: 35vh;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -63,13 +118,13 @@ body {
 }
 
 .buttons__btn {
-  margin: 0.5rem -0.2rem 0.3rem 0.5rem;
+  margin: 0.3rem -0.2rem 0.3rem 0.5rem;
   font-family: "Annie Use Your Telescope", cursive;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: 1px solid black;
   cursor: pointer;
-  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
   -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.4s;
   transition: -webkit-transform 0.3s, -webkit-box-shadow 0.4s;
   transition: transform 0.3s, box-shadow 0.4s;
@@ -86,17 +141,19 @@ body {
 @media screen and (min-width: 768px) {
   .buttons__btn {
     height: 100%;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 
 .details {
-  background-color: #EAD5D5;
-  margin: 1rem 0.3rem 0.3rem 0;
+  background-color: #F0E0E0;
+  margin: 0.8rem 0.3rem 0.3rem 0;
   border: 1px solid black;
-  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 3.6px rgba(0, 0, 0, 0.06), 5px 5px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
   position: relative;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 200;
 }
 
 @media screen and (min-width: 768px) {
@@ -109,20 +166,42 @@ body {
   text-align: center;
   position: absolute;
   bottom: 0;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
+  font-size: 0.7rem;
+  word-spacing: -2px;
+  letter-spacing: -0.6px;
+}
+
+@media screen and (min-width: 768px) {
+  .details__links {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+  }
 }
 
 .details_description {
-  padding: 0rem 1rem;
+  padding: 0rem 0.5rem;
+  font-size: 0.8rem;
 }
 
 @media screen and (min-width: 768px) {
   .details_description {
-    font-size: 1.6rem;
+    font-size: 1rem;
+    padding: 0rem 1rem;
   }
 }
 
 .details__title {
-  margin: 0.5rem 0 -1rem 1rem;
+  margin: 0.5rem 0 -0.7rem 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 768px) {
+  .details__title {
+    font-size: 1.2rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+  }
 }
 /*# sourceMappingURL=App.css.map */
