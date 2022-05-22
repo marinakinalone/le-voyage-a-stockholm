@@ -4,7 +4,6 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
 
 const readDataFromFile = path => {
   const data = fs.readFileSync(path);
@@ -38,9 +37,4 @@ app.get('/locations', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log(`Listening at http://localhost:${PORT}`);
-});
-
-module.exports.app = app;
+module.exports = app;
