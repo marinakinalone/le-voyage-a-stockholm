@@ -26,6 +26,17 @@ body {
 
 .info-buttons {
   grid-area: info;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.info-buttons > * {
+  width: 50%;
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
@@ -46,20 +57,6 @@ body {
     margin-left: -0.4rem;
     min-width: 100%;
   }
-}
-
-.info-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.info-buttons > * {
-  width: 50%;
 }
 
 @media screen and (min-width: 768px) {
@@ -186,17 +183,14 @@ body {
 
 .map {
   grid-area: map;
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 768px) and (orientation: landscape) {
   .map {
     margin-top: 0rem;
   }
-}
-
-.map {
-  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 900px) and (orientation: portrait) {

@@ -21,6 +21,12 @@ body {
 
 .info-buttons {
     grid-area: info;
+    & > * {
+        width: 50%;
+    }
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     @include landscape_mode() {
         flex-direction: column;
         justify-content: flex-start !important;
@@ -33,17 +39,7 @@ body {
             min-width: 100%;
         }
     }
-}
-
-.info-buttons {
-    & > * {
-        width: 50%;
-    }
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
     @include tablet_min_width() {
         font-size: 1.3rem;
     }
-
 }
