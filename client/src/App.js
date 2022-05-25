@@ -16,11 +16,11 @@ const App = () => {
   useEffect(() => {
     const fetchLocationsAndCategories = async () => {
       console.log("waiting...")
-      const locationsData = await fetch("https://le-vas-server.herokuapp.com/locations")
+      const locationsData = await fetch("https://le-vas-server.herokuapp.com/locations/all")
       const locationsResult = await locationsData.json();
       setLocations([...locationsResult])
       setDisplayLocation([...locations])
-      const categoriesData = await fetch("https://le-vas-server.herokuapp.com/categories")
+      const categoriesData = await fetch("https://le-vas-server.herokuapp.com/categories/all")
       const categoriesResult = await categoriesData.json();
       setCategories([...categoriesResult])
       setTimeout(() => {
