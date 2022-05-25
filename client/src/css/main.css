@@ -24,27 +24,6 @@ body {
   }
 }
 
-.header {
-  grid-area: header;
-}
-
-@media screen and (min-width: 768px) and (orientation: landscape) {
-  .header {
-    margin-top: 0.5rem;
-    margin-bottom: -1rem;
-  }
-}
-
-.map {
-  grid-area: map;
-}
-
-@media screen and (min-width: 768px) and (orientation: landscape) {
-  .map {
-    margin-top: 0rem;
-  }
-}
-
 .info-buttons {
   grid-area: info;
 }
@@ -69,23 +48,6 @@ body {
   }
 }
 
-.map {
-  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (max-width: 900px) and (orientation: portrait) {
-  .map {
-    height: 50vh;
-  }
-}
-
-.header__title {
-  margin: 0.3rem auto;
-  font-weight: 400;
-  font-size: 2.3rem;
-}
-
 .info-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,6 +66,23 @@ body {
   .info-buttons {
     font-size: 1.3rem;
   }
+}
+
+.header {
+  grid-area: header;
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .header {
+    margin-top: 0.5rem;
+    margin-bottom: -1rem;
+  }
+}
+
+.header__title {
+  margin: 0.3rem auto;
+  font-weight: 400;
+  font-size: 2.3rem;
 }
 
 .buttons {
@@ -146,7 +125,7 @@ body {
 }
 
 .details {
-  background-color: #F0E0E0;
+  background-color: #f7e2e2bb;
   margin: 0.8rem 0.3rem 0.3rem 0;
   border: 1px solid black;
   -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -204,4 +183,25 @@ body {
     padding-left: 0.5rem;
   }
 }
-/*# sourceMappingURL=App.css.map */
+
+.map {
+  grid-area: map;
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+  .map {
+    margin-top: 0rem;
+  }
+}
+
+.map {
+  -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  .map {
+    height: 50vh;
+  }
+}
+/*# sourceMappingURL=main.css.map */

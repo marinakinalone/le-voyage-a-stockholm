@@ -1,0 +1,13 @@
+.header {
+    grid-area: header;
+    @include landscape_mode() {
+        margin-top: 0.5rem;
+        margin-bottom: -1rem;
+    }
+}
+
+.header__title {
+    margin: 0.3rem auto;
+    font-weight: 400;
+    font-size: 2.3rem;
+}

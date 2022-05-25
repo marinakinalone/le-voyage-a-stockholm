@@ -1,0 +1,13 @@
+.map {
+    grid-area: map;
+    @include landscape_mode() {
+        margin-top: 0rem;
+    }
+}
+
+.map {
+    box-shadow: $shadow;
+    @include tablet_max_width() {
+        height: 50vh;
+    }
+}

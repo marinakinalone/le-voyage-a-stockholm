@@ -1,0 +1,23 @@
+@mixin tablet_min_width {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+}
+
+@mixin tablet_max_width {
+    @media screen and (max-width: 900px) and (orientation: portrait) {
+      @content;
+    }
+}
+
+@mixin landscape_mode {
+    @media screen and (min-width: 768px) and (orientation: landscape) {
+      @content;
+    }
+}
+
+@mixin desktop_min_width {
+    @media screen and (min-width: 900px) {
+      @content;
+    }
+}
