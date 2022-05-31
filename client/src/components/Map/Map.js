@@ -25,7 +25,7 @@ const Map = ({ locations, categories, getDescriptionByMarker }) => {
       </section>
     ) :
     <>
-      <p>currently loading...or maybe broken!</p>
+      <p>currently loading...</p>
     </>
   }
 
