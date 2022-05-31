@@ -15,7 +15,6 @@ const App = () => {
 
   useEffect(() => {
     const fetchLocationsAndCategories = async () => {
-      console.log("waiting...")
       const locationsData = await fetch("https://le-vas-server.herokuapp.com/locations/all")
       const locationsResult = await locationsData.json();
       setLocations([...locationsResult])

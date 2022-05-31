@@ -1,6 +1,6 @@
 
 import Location from './Location';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const Markers = ({ locations, categories, getDescriptionByMarker }) => {
@@ -15,14 +15,15 @@ const Markers = ({ locations, categories, getDescriptionByMarker }) => {
         getDescriptionByMarker(id)
         setSelectedMarker(id);
     }
+
     
     return (
         <>
         {locations.map(location => {
             if (location._id === selectedMarker) {
-                return <Location color={getColor(categories, location.category, "selected")} location={location} getDescriptionByMarker={getDescriptionByMarker} handleClick={handleClick} /> 
+                return <Location key={location._id} color={getColor(categories, location.category, "selected")} scale={2} zIndex={100} location={location} getDescriptionByMarker={getDescriptionByMarker} handleClick={handleClick} /> 
             } else {
-                return <Location color={getColor(categories, location.category, "default")} location={location} getDescriptionByMarker={getDescriptionByMarker} handleClick={handleClick} /> 
+                return <Location key={location._id} color={getColor(categories, location.category, "default")} scale={1.5} zIndex={1} location={location} getDescriptionByMarker={getDescriptionByMarker} handleClick={handleClick} /> 
             }
 
         })}
