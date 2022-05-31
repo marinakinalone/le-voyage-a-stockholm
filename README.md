@@ -11,6 +11,25 @@ A small app to present my favorite places in Stockholm on a map
 - Node.js
 - Express
 - MongoDB & Mongoose
+  
+  ## Deployments
+[server](https://le-vas-server.herokuapp.com/locations/all)
+
+[client](https://le-voyage-a-stockholm.herokuapp.com/)
+
+## Installation
+
+```bash
+# in the server folder
+npm i
+npm run start # node
+#or
+npm run dev # nodemon for development purposes
+
+#in the client folder
+npm i
+npm run start
+```
 ## What I have learned from this project
 to-do
 ## What's next to do?
