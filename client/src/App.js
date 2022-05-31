@@ -27,6 +27,7 @@ const App = () => {
       }, 1000)
      }
      fetchLocationsAndCategories();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading])
 
 const getLocationsByType = selectedType => {
