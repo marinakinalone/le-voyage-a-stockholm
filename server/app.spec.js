@@ -37,13 +37,23 @@ describe('Locations collection', () => {
       category: 'culture',
       description: 'a very cool place',
       address: 'somewhere in Stockholm',
-      direction: 'https://directionstothecoolplace.com',
+      directions: 'https://directionstothecoolplace.com',
     };
     request(app)
       .post('/locations/create')
       .send(newLocation)
       .expect('Content-Type', /json/)
       .expect(200, done);
+  });
+  test('/POST create a new location - error', done => {
+    const newLocation = {
+      name: 'Place without complete information',
+    };
+    request(app)
+      .post('/locations/create')
+      .send(newLocation)
+      .expect('Content-Type', /text/)
+      .expect(400, done);
   });
   test('/GET one location', done => {
     request(app)
@@ -52,6 +62,13 @@ describe('Locations collection', () => {
       .expect('Content-Type', /json/)
       .expect(200, done);
   });
+  test('/GET locations - not found', done => {
+    request(app)
+      .get('/locations/nowheretobefound')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /text/)
+      .expect(404, done);
+  });
   test('/PUT update one location', done => {
     const updatedLocation = {
       name: 'Cool place',
@@ -59,7 +76,7 @@ describe('Locations collection', () => {
       category: 'restaurants',
       description: 'a very cool place where we can eat',
       address: 'somewhere in Stockholm',
-      direction: 'https://directionstothecoolplace.com',
+      directions: 'https://directionstothecoolplace.com',
     };
     request(app)
       .put('/locations/Cool place')
@@ -67,10 +84,26 @@ describe('Locations collection', () => {
       .expect('Content-Type', /json/)
       .expect(200, done);
   });
+  test('/PUT update one location - not found', done => {
+    const updatedLocation = {
+      name: 'nowhere to be found v.2',
+    };
+    request(app)
+      .put('/locations/nowhere to be found')
+      .send(updatedLocation)
+      .expect('Content-Type', /text/)
+      .expect(404, done);
+  });
   test('/DELETE delete one contact', done => {
     request(app)
       .delete('/locations/Cool place')
       .expect('Content-Type', /json/)
       .expect(200, done);
+  });
+  test('/DELETE delete one contact - not found', done => {
+    request(app)
+      .delete('/locations/nowheretobefound')
+      .expect('Content-Type', /text/)
+      .expect(404, done);
   });
 });
