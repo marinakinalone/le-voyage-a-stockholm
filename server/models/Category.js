@@ -4,9 +4,9 @@ const { Schema } = mongoose;
 
 const categorySchema = new Schema({
   id: mongoose.SchemaTypes.ObjectId,
-  category: String,
-  description: String,
-  colors: Object,
+  category: { type: String, required: true },
+  description: { type: String, required: true },
+  colors: { type: Object, required: true },
 },
 {
   collection: 'categories',
