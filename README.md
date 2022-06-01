@@ -36,7 +36,7 @@ The initial project was created during a "hacking day" so I learned to create a 
 - add an admin page (with authentication) to create, update and delete locations
 - write more React tests
 - play with React Router a little bit
-- improve the UI (especially in terms of accessibility)
+- improve the UI (especially in terms of accessibility, hover states)
 
 ## Team
 
