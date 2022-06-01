@@ -155,13 +155,13 @@ body {
   }
 }
 
-.details_description {
+.details__description {
   padding: 0rem 0.5rem;
   font-size: 0.8rem;
 }
 
 @media screen and (min-width: 768px) {
-  .details_description {
+  .details__description {
     font-size: 1rem;
     padding: 0rem 1rem;
   }
