@@ -15,12 +15,12 @@ const Location = ({location, color, scale, zIndex, handleClick, clicked}) => {
       {clicked ? (
             <InfoWindow
             >
-              <article>
-                <p>catégorie : <span>{location.category}</span></p>
-                <h3>{location.name}</h3>
+              <div className="infobox" >
+                <p style={{backgroundColor: color}} className="infobox-label">{location.category}</p>
+                <h3 >{location.name}</h3>
                 <p>{location.address}</p>
                 <a href={location.directions}>itinéraire</a>
-              </article>
+              </div>
             </InfoWindow>
       ):(
         <></>

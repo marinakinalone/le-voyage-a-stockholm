@@ -12,6 +12,8 @@ const App = () => {
       "description" : "Le Voyage à Stockholm est un petit guide présentant mes endroits favoris. Et oui, le titre est un clin d'oeil au Voyage à Nantes :)",
     }
 ])
+  const [selectedMarker, setSelectedMarker] = useState(false);
+
 
   useEffect(() => {
     const fetchLocationsAndCategories = async () => {
@@ -49,6 +51,11 @@ const getDescriptionByMarker = selectedMarkerKey => {
   setDisplayCategory([...updatedDescription]);
 }
 
+const setActiveMarker = (id) => {
+  setSelectedMarker(id)
+}
+
+
 
   return (
     <div className="page">
@@ -57,10 +64,10 @@ const getDescriptionByMarker = selectedMarkerKey => {
       ) : (
         <>
         <Header />
-        <Map locations={displayLocation} categories={categories} getDescriptionByMarker={getDescriptionByMarker} />
+        <Map locations={displayLocation} categories={categories} activeMarker={selectedMarker} getDescriptionByMarker={getDescriptionByMarker} setActiveMarker={setActiveMarker} />
         <section className="info-buttons">
           <Details content={displayCategory} />
-          <ButtonSet categories={categories} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />
+          <ButtonSet categories={categories} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} setActiveMarker={setActiveMarker} />
         </section>
         </>
       )}
