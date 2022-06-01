@@ -30,10 +30,13 @@ npm run dev # nodemon for development purposes
 npm i
 npm run start
 ```
-## What I have learned from this project
-to-do
+## What I have learned
+The initial project was created during a "hacking day" so I learned to create a small app from scratch and stick to a MVP. The biggest "chunk" was to go through the huge documentation of the Google Maps API: it was a nice exercise to practice reading technical documentation :)
 ## What's next to do?
-to-do
+- add an admin page (with authentication) to create, update and delete locations
+- write more React tests
+- play with React Router a little bit
+- improve the UI (especially in terms of accessibility)
 
 ## Team
 
