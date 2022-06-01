@@ -128,7 +128,7 @@ body {
   -webkit-box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0.2px 0.2px 1.1px rgba(0, 0, 0, 0.04), 2.2px 2.2px 1.1px rgba(0, 0, 0, 0.06), 5px 5px 5px rgba(0, 0, 0, 0.1);
   position: relative;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-weight: 200;
 }
 
@@ -155,13 +155,13 @@ body {
   }
 }
 
-.details_description {
+.details__description {
   padding: 0rem 0.5rem;
   font-size: 0.8rem;
 }
 
 @media screen and (min-width: 768px) {
-  .details_description {
+  .details__description {
     font-size: 1rem;
     padding: 0rem 1rem;
   }
@@ -197,5 +197,25 @@ body {
   .map {
     height: 50vh;
   }
+}
+
+.infobox {
+  font-family: "Roboto Mono", monospace;
+  margin: 0.5rem 0.2rem 0.75rem 0.2rem;
+}
+
+.infobox .infobox-label {
+  font-style: italic;
+  padding: 0.1rem 0.25rem;
+}
+
+.infobox * {
+  margin: 0;
+  padding: 0.25rem;
+}
+
+.infobox h3 {
+  font-size: 1rem;
+  margin-bottom: -0.25rem;
 }
 /*# sourceMappingURL=main.css.map */

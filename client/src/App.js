@@ -12,10 +12,11 @@ const App = () => {
       "description" : "Le Voyage à Stockholm est un petit guide présentant mes endroits favoris. Et oui, le titre est un clin d'oeil au Voyage à Nantes :)",
     }
 ])
+  const [selectedMarker, setSelectedMarker] = useState(false);
+
 
   useEffect(() => {
     const fetchLocationsAndCategories = async () => {
-      console.log("waiting...")
       const locationsData = await fetch("https://le-vas-server.herokuapp.com/locations/all")
       const locationsResult = await locationsData.json();
       setLocations([...locationsResult])
@@ -28,6 +29,7 @@ const App = () => {
       }, 1000)
      }
      fetchLocationsAndCategories();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading])
 
 const getLocationsByType = selectedType => {
@@ -49,6 +51,9 @@ const getDescriptionByMarker = selectedMarkerKey => {
   setDisplayCategory([...updatedDescription]);
 }
 
+const setActiveMarker = (id) => {
+  setSelectedMarker(id)
+}
 
   return (
     <div className="page">
@@ -57,10 +62,10 @@ const getDescriptionByMarker = selectedMarkerKey => {
       ) : (
         <>
         <Header />
-        <Map locations={displayLocation} categories={categories} getDescriptionByMarker={getDescriptionByMarker} />
+        <Map locations={displayLocation} categories={categories} activeMarker={selectedMarker} getDescriptionByMarker={getDescriptionByMarker} setActiveMarker={setActiveMarker} />
         <section className="info-buttons">
           <Details content={displayCategory} />
-          <ButtonSet categories={categories} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} />
+          <ButtonSet categories={categories} getLocationsByType={getLocationsByType} getDescriptionByType={getDescriptionByType} setActiveMarker={setActiveMarker} />
         </section>
         </>
       )}

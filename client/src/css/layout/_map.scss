@@ -8,3 +8,21 @@
         height: 50vh;
     }
 }
+
+.infobox {
+    font-family: $mono;
+    margin: 0.5rem 0.2rem 0.75rem 0.2rem;
+    .infobox-label {
+        font-style: italic;
+        padding: 0.1rem 0.25rem;
+
+    }
+    * {
+        margin: 0;
+        padding: 0.25rem;
+    }
+    h3 {
+        font-size: 1rem;
+        margin-bottom: -0.25rem;
+    }
+}

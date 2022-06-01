@@ -4,7 +4,7 @@
     border: 1px solid black;
     box-shadow: $shadow;
     position: relative;
-    font-family: 'Roboto Mono', monospace;
+    font-family: $mono;
     font-weight: 200;
     @include tablet_min_width() {
         min-height: 35vh;
@@ -25,7 +25,7 @@
     }
 }
 
-.details_description {
+.details__description {
     padding: 0rem 0.5rem;
     font-size: 0.8rem;
     @include tablet_min_width() {
