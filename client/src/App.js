@@ -55,8 +55,6 @@ const setActiveMarker = (id) => {
   setSelectedMarker(id)
 }
 
-
-
   return (
     <div className="page">
       {loading ? (
