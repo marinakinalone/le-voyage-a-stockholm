@@ -56,6 +56,8 @@ The initial project was created during a "hacking day" so I learned to create a 
 - write more React tests
 - play with React Router a little bit
 - improve the UI (especially in terms of accessibility, hover states)
+- improve copywriting (maybe add some pictures)
+- oh and I'd love for the user to be able to have an account and save their favorite locations!!
 
 ## Team
 
