@@ -28,9 +28,9 @@ a creative collaboration with Stormy Cat |
 
 ## Deployments
 
-[server](https://le-vas-server.herokuapp.com/locations/all)
+[server](https://vas-server.onrender.com/locations/all)
 
-[client](https://le-voyage-a-stockholm.herokuapp.com/)
+[client](https://le-voyage-a-stockholm.onrender.com/)
 
 ## Installation
 
