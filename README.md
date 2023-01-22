@@ -24,7 +24,7 @@ a creative collaboration with Stormy Cat |
 
 ### - devops -
 
-- Heroku
+- Onrender
 
 ## Deployments
 
@@ -56,10 +56,6 @@ The initial project was created during a "hacking day" so I learned to create a 
 - write more React tests
 - play with React Router a little bit
 - improve the UI (especially in terms of accessibility, hover states)
-
-## Resources
-
-- [Deploying client and server code to heroku from a single git repo](https://medium.com/karolis-stulgys/deploy-client-and-server-code-to-heroku-from-a-single-git-repo-44c5b65da10a)
 
 ## Team
 
